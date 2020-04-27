@@ -4,18 +4,15 @@
     </head>
     <body>
         <div>
-            <h1><a href="">L'Existence précède l'essence.</a></h1>
-        </div>
-        <div>
-            <p>published: 26/04/2020</p>
-            <h2><a href="">My first post노</a></h2>
-            <p>Ce que j'ai fait maintenant pourrait me conduire à un chemin de développeur.신</p>
+            <h1><a href="">Etudiant en SHS.</a></h1>
         </div>
 
-        <div>
-            <p>published: 26/04/2020</p>
-            <h2><a href="">My second post바</a></h2>
-            <p>Confinement est dur mais cela me donne du temps libre afin d'améliorer ma compétence보</p>
-        </div>
+        {% for post in posts %}
+            <div>
+                <p>published: {{ post.published_date }}</p>
+                <h2><a href="">{{ post.title }}</a></h2>
+                <p>{{ post.text|linebreaksbr }}</p>
+            </div>
+        {% endfor %}
     </body>
 </html>
